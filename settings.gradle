@@ -1,0 +1,8 @@
+include ':commonlib'
+include ':aop-plugin'
+include ':aop-asm'
+include ':aop-ast'
+include ':aop-apt'
+include ':aop-aspectj'
+include ':app'
+rootProject.name = "AndroidAOP"

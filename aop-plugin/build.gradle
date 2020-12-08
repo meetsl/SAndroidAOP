@@ -1,0 +1,27 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+
+
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:4.0.2'
+    implementation 'org.aspectj:aspectjtools:1.9.5'
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri('../repo'))
+        pom.groupId = 'com.meetsl.plugin'
+        pom.artifactId = 'aop'
+        pom.version = '1.0.0'
+    }
+}
+
+repositories {
+    jcenter()
+}
